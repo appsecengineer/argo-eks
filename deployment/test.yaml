@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vul-dep 
+spec:
+  selector:
+    matchLabels:
+      app: flask 
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      serviceAccountName: secret-access
+      containers:
+      - name: vul-app
+        image: <update-the-image-name>
+        ports:
+        - containerPort: 5000
