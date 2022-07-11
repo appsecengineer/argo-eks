@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: flask 
-  replicas: 1 # tells deployment to run 2 pods matching the template
+  replicas: 1 # change the replica 
   template:
     metadata:
       labels:
@@ -15,6 +15,6 @@ spec:
       serviceAccountName: secret-access
       containers:
       - name: vul-app
-        image: <update-the-image-name>
+        image: <update-the-image-name> # change the image name 
         ports:
         - containerPort: 5000
